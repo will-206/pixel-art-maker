@@ -123,6 +123,7 @@ div {
   left: 75px;
 }
 .body {
+  display: block;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative;
   background-color: #B8B6B1;
