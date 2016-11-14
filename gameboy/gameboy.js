@@ -39,54 +39,23 @@
     console.log("clicked " + event.target.parentNode.id + " " + event.target.className );
     event.target.className = currentColor;
   });
-  // Click and drag
 
+  const node = document.getElementById('screen');
+  // remove all screen childnodes
+  function clearScreen () {
+    while (node.hasChildNodes()) {
+      node.removeChild(node.lastChild);
+    }
+  }
 
-  // var mouseDown = false;
-  // screen.addEventListener('mousedown', (event) => {
-  //   console.log("mousedown");
-  //   mouseDown = true;
-  // });
-  // screen.addEventListener('mouseup', (event) => {
-  //   console.log("mouseup");
-  //   mouseDown = false;
-  // });
-  //
-  // if(mouseDown){
-  //   console.log("entered func");
-  //   screen.addEventListener('mouseenter', (event) => {
-  //     if (event.target.id === 'screen' || event.target.parentNode.id === 'screen') {
-  //       return;
-  //     }
-  //     console.log("moused over " + event.target.parentNode.id + " " + event.target.className );
-  //     event.target.className = currentColor;
-  //   });
-  // };
-
-  // screen.addEventListener('mouseenter', (event) => {
-  //   if (event.target.id === 'screen' || event.target.parentNode.id === 'screen') {
-  //     return;
-  //   }
-  //   console.log("moused over " + event.target.parentNode.id + " " + event.target.className );
-  //   event.target.className = currentColor;
-  // });
-  // screen.addEventListener('mouseenter', (event) => {
-  //   console.log("Entered " + " button");
-  // });
-  //
-  //
-  let currentColor;
+  let currentColor = "montana";
   const palette1 = document.getElementById('palette1');
-
   // Add listeners to the palette
   palette1.addEventListener('click', (event) => {
 
     //clear screen
     if (event.target.id === 'clear' || event.target.parentNode.id === 'clear') {
-      const node = document.getElementById('screen');
-      while (node.hasChildNodes()) {
-        node.removeChild(node.lastChild);
-      }
+      clearScreen();
       generateDivs(screenHeight, screenWidth);
       return;
     } else if (event.target === palette1) {
@@ -100,23 +69,59 @@
   });
   let on = true;
   const onOffButton = document.getElementById('onOffButton');
+  const batteryLight = document.getElementById('batteryLight')
+  const offScreen = document.getElementById('offScreen')
 
   onOffButton.addEventListener('click', (event) => {
     if (on) {
     event.target.className = 'onOffLeft';
-    document.getElementById('batteryLight').className = 'batteryLightOff';
-    document.getElementById('offScreen').className = 'offScreen';
-    const node = document.getElementById('screen');
-    while (node.hasChildNodes()) {
-      node.removeChild(node.lastChild);
-    }
+    batteryLight.className = 'batteryLightOff';
+    offScreen.className = 'offScreen';
+    clearScreen();
     generateDivs(screenHeight, screenWidth);
     on = false;
     } else {
       event.target.className = 'onOffRight';
-      document.getElementById('batteryLight').className = 'batteryLightOn';
-      document.getElementById('offScreen').className = '';
+      batteryLight.className = 'batteryLightOn';
+      offScreen.className = '';
       on = true;
     }
   });
 })();
+
+// Click and drag
+
+
+// var mouseDown = false;
+// screen.addEventListener('mousedown', (event) => {
+//   console.log("mousedown");
+//   mouseDown = true;
+// });
+// screen.addEventListener('mouseup', (event) => {
+//   console.log("mouseup");
+//   mouseDown = false;
+// });
+//
+// if(mouseDown){
+//   console.log("entered func");
+//   screen.addEventListener('mouseenter', (event) => {
+//     if (event.target.id === 'screen' || event.target.parentNode.id === 'screen') {
+//       return;
+//     }
+//     console.log("moused over " + event.target.parentNode.id + " " + event.target.className );
+//     event.target.className = currentColor;
+//   });
+// };
+
+// screen.addEventListener('mouseenter', (event) => {
+//   if (event.target.id === 'screen' || event.target.parentNode.id === 'screen') {
+//     return;
+//   }
+//   console.log("moused over " + event.target.parentNode.id + " " + event.target.className );
+//   event.target.className = currentColor;
+// });
+// screen.addEventListener('mouseenter', (event) => {
+//   console.log("Entered " + " button");
+// });
+//
+//
