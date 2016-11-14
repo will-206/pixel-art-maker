@@ -35,7 +35,7 @@ html {
   border: 2px dashed #393939;
   margin: 0;
   padding-left: 3px;
-  background-color: #B6CC96;
+  background: none;
 }
 #C {
   position: absolute;
@@ -45,6 +45,7 @@ html {
   width: 8px;
   border: 2px solid #393939;
   border-right: 0px;
+  z-index: 0;
 }
 section {
   height: 12px;

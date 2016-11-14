@@ -82,7 +82,7 @@
   palette1.addEventListener('click', (event) => {
 
     //clear screen
-    if (event.target.id === 'clear') {
+    if (event.target.id === 'clear' || event.target.parentNode.id === 'clear') {
       const node = document.getElementById('screen');
       while (node.hasChildNodes()) {
         node.removeChild(node.lastChild);
