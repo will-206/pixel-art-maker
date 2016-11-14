@@ -50,6 +50,7 @@
 
   let currentColor = "montana";
   const palette1 = document.getElementById('palette1');
+
   // Add listeners to the palette
   palette1.addEventListener('click', (event) => {
 
@@ -89,39 +90,27 @@
   });
 })();
 
-// Click and drag
-
-
+// failed Click and drag code
+// 
 // var mouseDown = false;
-// screen.addEventListener('mousedown', (event) => {
+// screen.addEventListener('mousedown', () => {
 //   console.log("mousedown");
 //   mouseDown = true;
 // });
-// screen.addEventListener('mouseup', (event) => {
+// screen.addEventListener('mouseup', () => {
 //   console.log("mouseup");
 //   mouseDown = false;
 // });
 //
-// if(mouseDown){
+// const pixels = document.getElementById('screen').childNodes.childNodes;
+// for (const pixel of pixels) {
 //   console.log("entered func");
 //   screen.addEventListener('mouseenter', (event) => {
 //     if (event.target.id === 'screen' || event.target.parentNode.id === 'screen') {
 //       return;
-//     }
+//     } else if (mouseDown) {
 //     console.log("moused over " + event.target.parentNode.id + " " + event.target.className );
 //     event.target.className = currentColor;
+//     }
 //   });
 // };
-
-// screen.addEventListener('mouseenter', (event) => {
-//   if (event.target.id === 'screen' || event.target.parentNode.id === 'screen') {
-//     return;
-//   }
-//   console.log("moused over " + event.target.parentNode.id + " " + event.target.className );
-//   event.target.className = currentColor;
-// });
-// screen.addEventListener('mouseenter', (event) => {
-//   console.log("Entered " + " button");
-// });
-//
-//
